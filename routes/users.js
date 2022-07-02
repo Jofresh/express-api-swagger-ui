@@ -1,31 +1,22 @@
-const router = require('express').Router()
+const router = require("express").Router();
 
-const users = [
-    {
-        "id": 1,
-        "name": "John Doe"
-    },
-    {
-        "id": 2,
-        "name": "Jane Doe"
-    }
-]
+const { users } = require("../models");
 
 /**
  * @swagger
  * /users:
- *  get: 
+ *  get:
  *    description: Liste des utilisateurs
  *    responses:
- *      '200': 
- *        description: Utilisateurs récupérés avec succès 
+ *      '200':
+ *        description: Utilisateurs récupérés avec succès
  */
-router.get('/', (req, res) => res.json(users))
+router.get("/", (req, res) => res.json(users));
 
 /**
  * @swagger
  * /users/{id}:
- *  get: 
+ *  get:
  *    parameters:
  *      - name: id
  *        in: path
@@ -34,9 +25,11 @@ router.get('/', (req, res) => res.json(users))
  *        type: integer
  *    description: Récupérer un utilisateur par id
  *    responses:
- *      '200': 
- *        description: Utilisateur récupéré avec succès 
+ *      '200':
+ *        description: Utilisateur récupéré avec succès
  */
-router.get('/:id', (req, res) => res.json(users.find(({id}) => id == req.params.id)))
+router.get("/:id", (req, res) =>
+  res.json(users.find(({ id }) => id == req.params.id))
+);
 
-module.exports = router
+module.exports = router;
