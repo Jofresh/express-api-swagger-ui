@@ -1,0 +1,29 @@
+{
+  "name": "express-swagger",
+  "version": "1.0.0",
+  "description": "Express API with Swagger",
+  "main": "index.js",
+  "scripts": {
+    "dev": "nodemon index.js",
+    "start": "node index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Jofresh/express-swagger.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Jofresh/express-swagger/issues"
+  },
+  "homepage": "https://github.com/Jofresh/express-swagger#readme",
+  "dependencies": {
+    "express": "^4.18.1",
+    "swagger-jsdoc": "^6.2.1",
+    "swagger-ui-express": "^4.4.0"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.18"
+  }
+}
