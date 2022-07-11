@@ -9,14 +9,14 @@ app.use(express.static("public"));
 const routes = require("./routes");
 app.use("/", routes);
 
-const swaggerSetup = require("./swagger-setup");
-swaggerSetup(app);
-
 // handling errors
 app.use((err, req, res, next) => {
   console.log(err.stack);
   res.status(500).json({ message: "Something broke!" });
 });
+
+const swaggerSetup = require("./swagger-setup");
+swaggerSetup(app);
 
 const port = process.env.PORT || 8080;
 app.listen(port, () => {
