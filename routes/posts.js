@@ -6,7 +6,6 @@ const getPost = (req, res, next) => {
   const post = posts.find(({ id }) => id == req.params.id);
   if (post == null)
     return res.status(404).json({ message: "Cannot find post" });
-
   res.post = post;
   next();
 };
